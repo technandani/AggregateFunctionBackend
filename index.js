@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const mongoURI = 'mongodb+srv://nks854338:Nandani50%25@students.a0ydx.mongodb.net/aggeregateFunction';
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
