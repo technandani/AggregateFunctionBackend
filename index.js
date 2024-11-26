@@ -1,12 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const mongoURI = 'mongodb+srv://nks854338:Nandani50%25@students.a0ydx.mongodb.net/aggeregateFunction';
+const mongoURI = process.env.MONGODB_URL;
 mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
